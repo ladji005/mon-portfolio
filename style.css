@@ -1,0 +1,252 @@
+/* Style général du corps de la page */
+body {
+    font-family: 'Ubuntu', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f5f6fa;
+    background: linear-gradient(120deg, #232526 0%, #414345 100%);
+    min-height: 100vh;
+}
+
+/* En-tête avec fond dégradé et ombre */
+header {
+    color: #fff;
+    background: linear-gradient(90deg, #232526 0%, #414345 100%);
+    padding: 1em 2em;
+    border-style: none;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    margin: 1em;
+}
+
+/* Barre de navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Bloc du nom et de la photo */
+.slider-content {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* Photo de profil dans le header */
+.slider-content img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #6dd5ed;
+    object-fit: cover;
+    margin-right: 1em;
+    background: #fff;
+}
+
+/* Nom dans le header */
+.slider-content h1 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #6dd5ed;
+    letter-spacing: 1px;
+}
+
+/* Liste du menu de navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+/* Liens du menu */
+nav a {
+    color: #f5f6fa;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, background 0.3s;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    background: transparent;
+}
+
+/* Effet au survol sur les liens du menu */
+nav a:hover {
+    background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+    color: #232526;
+}
+
+/* Bouton burger pour mobile */
+.burger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    color: #6dd5ed;
+    transition: color 0.3s, transform 0.3s;
+}
+.burger.active {
+    color: #2193b0;
+    transform: rotate(90deg);
+}
+
+/* Contenu principal */
+main {
+    padding: 2em 1em;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Sections du contenu */
+section {
+    margin-bottom: 2em;
+    background: rgba(33, 147, 176, 0.13);
+    border-radius: 14px;
+    padding: 1.5em;
+    box-shadow: 0 2px 12px rgba(33,147,176,0.08);
+    border-left: 5px solid #6dd5ed;
+}
+
+/* Blocs de compétences */
+.competence-block {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+    background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    padding: 0.7em 1em;
+    box-shadow: 0 1px 4px rgba(33,147,176,0.06);
+}
+
+/* Images dans les sections compétences, CV et photo */
+.img-competence img, .img-cv img, .photo img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #6dd5ed;
+    margin: 0.5em 0;
+    background: #fff;
+}
+
+/* Textes descriptifs */
+.descrition, .propos, .ex-projet, .moncv {
+    margin-bottom: 1em;
+    color: #e0e6ed;
+}
+
+/* Pied de page */
+footer {
+    color: #fff;
+    background: linear-gradient(90deg, #232526 0%, #414345 100%);
+    padding: 1em;
+    border-style: none;
+    border-radius: 15px;
+    align-items: center;
+    margin: 1em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Réseaux sociaux dans le pied de page */
+.reseau a {
+    margin: 0 0.5em;
+    color: #6dd5ed;
+    font-size: 2em;
+    transition: color 0.3s, transform 0.2s;
+    vertical-align: middle;
+}
+.reseau a:hover {
+    color: #2193b0;
+    transform: scale(1.15);
+}
+
+/* Droits d'auteur */
+.droits {
+    margin-top: 1em;
+    font-size: 0.9em;
+    color: #bfc0d5;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+    header, footer {
+      margin: 0.5em;
+      padding: 0.7em;
+    }
+    .burger {
+      display: block;
+    }
+    nav ul.menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: #232526;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      border-radius: 10px;
+      padding: 1em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(33,147,176,0.18);
+    }
+    nav ul.menu.active {
+      display: flex;
+    }
+    .slider-content h1 {
+      font-size: 1.1em;
+    }
+    main {
+      padding: 1em 0.2em;
+    }
+    section {
+      padding: 1em;
+    }
+    .competence-block {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5em;
+    }
+  }
+  
+  /* Apparition animée des sections */
+  section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+  }
+  section:nth-child(2) { animation-delay: 0.2s; }
+  section:nth-child(3) { animation-delay: 0.4s; }
+  section:nth-child(4) { animation-delay: 0.6s; }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  .btn-cv {
+    display: inline-block;
+    padding: 0.8em 2em;
+    background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+    color: #232526;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    box-shadow: 0 2px 8px rgba(33,147,176,0.15);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    margin-top: 1em;
+  }
+  .btn-cv:hover {
+    background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+  }
