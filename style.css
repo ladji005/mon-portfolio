@@ -129,6 +129,17 @@ section {
     background: #fff;
 }
 
+/* Image du projet en rectangle */
+.img-projet img {
+    width: 100%;
+    max-width: 400px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 1em auto;
+}
+
 /* Textes descriptifs */
 .descrition, .propos, .ex-projet, .moncv {
     margin-bottom: 1em;

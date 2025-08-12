@@ -54,3 +54,16 @@ function toggleMenu() {
   burger.classList.toggle('active');
   burger.innerHTML = menu.classList.contains('active') ? '&times;' : '&#9776;';
 }
+
+// Fermer le menu quand on clique sur un lien du menu (en mode mobile)
+document.querySelectorAll('.menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    const menu = document.getElementById('menu');
+    const burger = document.querySelector('.burger');
+    if (menu.classList.contains('active')) {
+      menu.classList.remove('active');
+      burger.classList.remove('active');
+      burger.innerHTML = '&#9776;';
+    }
+  });
+});
