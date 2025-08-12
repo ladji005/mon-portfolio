@@ -21,17 +21,17 @@ header {
 
 /* Barre de navigation */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 
 /* Bloc du nom et de la photo */
 .slider-content {
-    display: flex;
-    align-items: center;
-    gap: 1em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 /* Photo de profil dans le header */
@@ -81,17 +81,12 @@ nav a:hover {
 
 /* Bouton burger pour mobile */
 .burger {
-    display: none;
-    cursor: pointer;
-    font-size: 1.2em;
-    background: none;
-    border: none;
-    color: #6dd5ed;
-    transition: color 0.3s, transform 0.3s;
-}
-.burger.active {
-    color: #2193b0;
-    transform: rotate(90deg);
+  display: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  margin-left: 1em; /* espace entre le burger et le reste */
 }
 
 /* Contenu principal */
@@ -174,64 +169,98 @@ footer {
 }
 
 /* Styles responsives */
-@media (max-width: 768px) {
-    header, footer {
-      margin: 0.5em;
-      padding: 0.7em;
-    }
-    .burger {
-      display: block;
-    }
-    nav ul.menu {
-      display: none;
-      flex-direction: column;
-      gap: 0;
-      background: #232526;
-      position: absolute;
-      top: 60px;
-      right: 10px;
-      border-radius: 10px;
-      padding: 1em;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(33,147,176,0.18);
-    }
-    nav ul.menu.active {
-      display: flex;
-    }
-    .slider-content h1 {
-      font-size: 1.1em;
-    }
+@media (max-width: 992px) {
     main {
-      padding: 1em 0.2em;
+        max-width: 98vw;
+        padding: 1em 0.5em;
     }
-    section {
-      padding: 1em;
+    header, footer {
+        margin: 0.5em;
+        padding: 1em;
     }
     .competence-block {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5em;
+        gap: 1em;
     }
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
   }
-  
-  /* Apparition animée des sections */
-  section {
+  nav ul.menu {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: #232526;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border-radius: 10px;
+    padding: 1em;
+    z-index: 100;
+    width: 70vw;
+    min-width: 180px;
+  }
+  nav ul.menu.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+    header, footer {
+        margin: 0.2em;
+        padding: 0.5em;
+        border-radius: 8px;
+    }
+    .slider-content img {
+        width: 36px;
+        height: 36px;
+    }
+    .slider-content h1 {
+        font-size: 1em;
+    }
+    nav ul.menu {
+        top: 50px;
+        right: 0;
+        width: 100vw;
+        min-width: unset;
+        border-radius: 0 0 10px 10px;
+    }
+    section {
+        padding: 0.7em 0.3em;
+        font-size: 0.98em;
+    }
+    .competence-block {
+        padding: 0.5em 0.3em;
+    }
+    .img-competence img, .img-cv img, .photo img {
+        width: 44px;
+        height: 44px;
+    }
+    .btn-cv {
+        font-size: 0.95em;
+        padding: 0.7em 0;
+    }
+}
+
+/* Apparition animée des sections */
+section {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s forwards;
-  }
-  section:nth-child(2) { animation-delay: 0.2s; }
-  section:nth-child(3) { animation-delay: 0.4s; }
-  section:nth-child(4) { animation-delay: 0.6s; }
-  
-  @keyframes fadeInUp {
+}
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.4s; }
+section:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
     to {
       opacity: 1;
       transform: none;
     }
-  }
-  
-  .btn-cv {
+}
+
+.btn-cv {
     display: inline-block;
     padding: 0.8em 2em;
     background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
@@ -244,9 +273,9 @@ footer {
     box-shadow: 0 2px 8px rgba(33,147,176,0.15);
     transition: background 0.3s, color 0.3s, transform 0.2s;
     margin-top: 1em;
-  }
-  .btn-cv:hover {
+}
+.btn-cv:hover {
     background: linear-gradient(90deg, #2193b0 0%, #6dd5ed 100%);
     color: #fff;
     transform: translateY(-2px) scale(1.03);
-  }
+}
