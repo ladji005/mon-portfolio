@@ -132,8 +132,8 @@ section {
 /* Image du projet en rectangle */
 .img-projet img {
     width: 100%;
-    max-width: 400px;
-    height: 180px;
+    max-width: 100px;
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
     display: block;
